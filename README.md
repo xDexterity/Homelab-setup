@@ -6,4 +6,5 @@ Proxmox VE is a free, open-source platform that can run and manage Virtual Machi
 ## Proxmox-setup
 After installing Debian onto my host machine, I'll be referring to Proxmox documentation for setup: https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie
 
+![First step is to change the loop back address to the hosts own IP address](
 
