@@ -5,9 +5,10 @@ Proxmox VE is a free, open-source platform that can run and manage Virtual Machi
 
 ## Proxmox-setup
 After installing Debian onto my host machine, I'll be referring to Proxmox documentation for setup: https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie
-Luckily the setup is straightforward, you can just copy and paste the commands into your terminal.
 
-The first step is to change my host machine's loopback address. Here I've replaced 127.0.1.1 with the IP address of my host machine.
+The setup is straightforward, you can just copy and paste the commands into your terminal.
+
+The first step is to change the host machine's loopback address. Here I've replaced 127.0.1.1 with the IP address of my host machine.
 ![Step one](images/proxmox1.png)
 
 Next, we have to add the repository sources, then check it's correctly configured with:
@@ -48,6 +49,8 @@ You can access the Web GUI by inserting the host machines IP address followed by
 
 You'll be met with a security warning (which is normal), simply click on proceed to wesbite.
 
+The first thing to pop-up is a box, urging you to use a subscription. The subscription isn't mandatory, and later on I will show you how to disable this box from showing up again.
+
 After that, a login screen will appear, there you insert your machines login credentials.
 ![Step ten](images/proxmox10.png)
 
@@ -80,3 +83,4 @@ High availability is used for an environment that has multiple Promox nodes. Bec
 Afterwards, it’ll ask you if you want to update/reboot. Once that’s finished, you've completed setting up Proxmox VE.
 ![Step seventeen](images/proxmox17.png)
 
+From here on out you can configure VMs and Containers to suit any personal/homelab needs. In another article I will show my setup for Tailscale so I can access my machine from anywhere in the world.
