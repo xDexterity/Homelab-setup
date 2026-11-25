@@ -56,3 +56,10 @@ The documentation suggests creating a Linux bridge named "vmbr0". This allows yo
 Here I've issued the 'nano /etc/network/interfaces' to manually change the interfaces, creating a bridge.
 ![Step eleven](images/proxmox11.png)
 
+To ensure proper post-installation cleanup, I'm using a community-made script to automate this process for me:
+
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
+
+However, my environment wouldn't be able to recognize the command I've pasted.
+
+First I'd have to configure DNS on my machine. This is done by 
