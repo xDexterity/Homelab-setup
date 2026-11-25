@@ -33,7 +33,7 @@ Now you can install the Proxmox VE packages via 'apt install proxmox-ve postfix 
 This will prompt if you'd like to install a mail server. For my case, I don't need it so I'll input 'no configuration'
 ![Step eight](images/proxmox8.png)
 
-After some time, the system will install the all the necessary discrepancies and reboot.
+After some time, the system will install all the necessary discrepancies and reboot.
 
 Now you must remove the Debian kernel. 
 Proxmox VE uses it's own kernel that'll interfere will Debian on upgrades.
@@ -41,6 +41,15 @@ Proxmox VE uses it's own kernel that'll interfere will Debian on upgrades.
 You can do that by using the ' apt remove linux-image-amd64 'linux-image-6.12*' ' command.
 ![Step nine](images/proxmox9.png)
 
+Once you've removed the kernel, Proxmox should be up and running.
 
+You can access the Web GUI by inserting the host machines IP address followed by it's port.
+##### For example: X.X.X.X:8006
+
+You'll be met with a security warning (which is normal), simply click on proceed to wesbite.
+
+After that, a login screen will appear, there you insert your machines login credentials.
 ![Step ten](images/proxmox10.png)
+
+
 
