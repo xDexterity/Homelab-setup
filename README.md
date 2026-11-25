@@ -51,5 +51,8 @@ You'll be met with a security warning (which is normal), simply click on proceed
 After that, a login screen will appear, there you insert your machines login credentials.
 ![Step ten](images/proxmox10.png)
 
+The documentation suggests creating a Linux bridge named "vmbr0". This allows your VMs and Containers to connect to the network. Without it, only the host can access the physical network port.
 
+Here I've issued the 'nano /etc/network/interfaces' to manually change the interfaces, creating a bridge.
+![Step eleven](images/proxmox11.png)
 
