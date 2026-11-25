@@ -25,3 +25,22 @@ Once it's migrated, the 'apt update && apt full-upgrade' will refresh the list o
 ![Step five](images/proxmox5.png) 
 ##### Note: This isn't necessary as the old entries still work for now, but still considered good practice.
 
+Here we will install the Proxmox VE kernel and reboot the system to ensure everything is working properly.
+![Step six](images/proxmox6.png)
+![Step seven](images/proxmox7.png)
+
+Now you can install the Proxmox VE packages via 'apt install proxmox-ve postfix open-iscsi chrony'
+This will prompt if you'd like to install a mail server. For my case, I don't need it so I'll input 'no configuration'
+![Step eight](images/proxmox8.png)
+
+After some time, the system will install the all the necessary discrepancies and reboot.
+
+Now you must remove the Debian kernel. 
+Proxmox VE uses it's own kernel that'll interfere will Debian on upgrades.
+
+You can do that by using the ' apt remove linux-image-amd64 'linux-image-6.12*' ' command.
+![Step nine](images/proxmox9.png)
+
+
+![Step ten](images/proxmox10.png)
+
