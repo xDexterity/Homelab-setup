@@ -56,10 +56,27 @@ The documentation suggests creating a Linux bridge named "vmbr0". This allows yo
 Here I've issued the 'nano /etc/network/interfaces' to manually change the interfaces, creating a bridge.
 ![Step eleven](images/proxmox11.png)
 
-To ensure proper post-installation cleanup, I'm using a community-made script to automate this process for me:
+To ensure proper post-installation cleanup, I'm using a community-made script to automate this process for me.
+
+However, first I'd have to configure DNS on my machine as my environment wouldn't be able to recognize the command I've pasted.
+
+To configure DNS, I'll issue the 'nano /etc/resolv.conf' command, where I'll use Google and Cloudflare's public DNS servers.
+![Step twelve](images/proxmox12.png)
+
+Now that my machine can resolve the domain address, I can copy and paste the script:
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
+![Step thirteen](images/proxmox13.png)
 
-However, my environment wouldn't be able to recognize the command I've pasted.
+The 'pve-enterprise' repository is used for a production environment. This is a paid subscription, but the packages in this repository go through extra testing/stabilization before release. Making it less likely that something will break on a server that matters. For personal/testing use cases it's not necessary, hence why I've selected to keep the 'pve-no-subscription' repository, which is free.
 
-First I'd have to configure DNS on my machine. This is done by 
+Disabling the 'subscription nag' simply gets rid of the message at startup, urging you to use a valid subscription.
+![Step fourteen](images/proxmox14.png)
+
+High availability is used for an environment that has multiple Promox nodes. Because I am only using one instance, I will disable this.
+![Step fifteen](images/proxmox15.png)
+![Step sixteen](images/proxmox16.png)
+
+Afterwards, it’ll ask you if you want to update/reboot. Once that’s finished, you've completed setting up Proxmox VE.
+![Step seventeen](images/proxmox17.png)
+
